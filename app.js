@@ -15,7 +15,7 @@ const app = express();
 
 // ✅ FIXED: CORS configuration without wildcard options
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:4200', 'https://yourdomain.com'],
+  origin: ['https://sanmaroptimes.onrender.com', 'http://localhost:4200'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   credentials: true
@@ -37,7 +37,7 @@ app.use('/api/user/workpermits', Workpermit);
 
 
 // Serve Frontend
-const frontendPath = path.join(__dirname, 'opti-mes');
+const frontendPath = path.join(__dirname, 'OptiMES');
 
 if (fs.existsSync(frontendPath)) {
   app.use(express.static(frontendPath));
