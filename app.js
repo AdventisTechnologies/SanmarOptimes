@@ -37,15 +37,16 @@ app.use('/api/user/workpermits', Workpermit);
 
 
 // Serve Frontend
-const frontendPath = path.join(__dirname, 'OptiMES');
+// Serve Frontend (Angular)
+const frontendPath = path.join(__dirname, 'OptiMES', 'browser');
 
 if (fs.existsSync(frontendPath)) {
   app.use(express.static(frontendPath));
-  
-  // Explicit catch-all for non-API routes
+
   app.get(/^(?!\/api).*/, (req, res) => {
     res.sendFile(path.join(frontendPath, 'index.html'));
   });
 }
+
 
 module.exports = app;
