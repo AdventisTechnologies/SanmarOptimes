@@ -3,6 +3,9 @@ const http = require('http');
 const mongoose = require('mongoose');
 const WebSocket = require('ws');
 const app = require('./app');
+const connectDB = require("./config/db");
+
+connectDB();
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB)
