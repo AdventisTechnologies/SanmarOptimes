@@ -23,7 +23,7 @@ const app = express();
 
 // ✅ FIXED: CORS configuration without wildcard options
 app.use(cors({
-  origin: ['https://sanmaroptimes.onrender.com', 'http://localhost:4200'],
+  origin: ['http://localhost:3000', 'http://localhost:4200'],
   methods: ['GET', 'POST', 'PUT', "PATCH", 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   credentials: true
